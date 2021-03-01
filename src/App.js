@@ -39,35 +39,30 @@ class App extends React.Component {
       inputVal: e.target.value
     })
   }
+
   updateList = (text, id) => {
     this.setState({
       inputVal: text
-    })  
-      this.deleteListElement(id)
-  }
-  markAsComplete = (id) => {
-    // debugger;
-    const currentObj = this.state.todos.find((obj, index) => {
-      if (id === obj.id) {
-        return true;
-      }
     })
-    
-    currentObj.isCompleted = !currentObj.isCompleted
+    this.deleteListElement(id)
+  }
 
-    console.log(currentObj)
-
-    const filteredTodo = this.state.todos.filter((elm, index) => {
-      if (elm.id !== currentObj.id) {
-        return true
+  markAsComplete = (id) => {
+    const updatedTodos = this.state.todos.map(obj => {
+      if (obj.id === id) {
+        return {
+          ...obj,
+          isCompleted: !obj.isCompleted
+        }
       }
+      return obj;
     })
 
     this.setState({ 
-      todos: [currentObj, ...filteredTodo]
+      todos: updatedTodos
     })
 
-    console.log(this.state.todos)
+    // console.log(this.state.todos)
   }
 
   deleteListElement = (id) => {
@@ -84,9 +79,6 @@ class App extends React.Component {
       todos: filteredTodos
     }) 
   }
-  
-  
-
 
   render() {
 
@@ -94,8 +86,8 @@ class App extends React.Component {
       <div className="divContainer">
           <Header />
         <div className="header" >
-          <button onClick={this.mutateArray}>Submit</button>
-          <input onKeyPress={this.mutateArray} type="text" value={this.state.inputVal} onChange={this.handleInputChange}/>
+          <button className="submitButton" onClick={this.mutateArray}>Submit</button>
+          <input placeholder="What needs to be done?" className="searchBox" onKeyPress={this.mutateArray} type="text" value={this.state.inputVal} onChange={this.handleInputChange}/>
         </div>
         <List todos={this.state.todos}  deleteListElement={this.deleteListElement}  updateList={this.updateList} markAsComplete={this.markAsComplete}  />
       </div>

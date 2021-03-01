@@ -47,18 +47,121 @@ table {
 	border-spacing: 0;
 }
 // ..........................................
-h1{
-    text-align: center;
-    font-size: 100px;
-    letter-spacing: 1px;
-    font-weight: 900;
-    margin-top: 100px;
+body{
+	width: 100%;
+	color: #4d4d4d;
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background-color: #f8f5f5;
 }
+input:focus {
+	outline: none;
+}
+
+h1{
+		text-align: center;
+    font-size: 120px;
+    font-weight: 500;
+    color: rgb(226, 219, 219);
+}
+
+.listParentContainer{
+	width: 47.5%;
+	margin: 0 auto;
+}
+
 .divContainer{
 	text-align: center;
 }
 
 input{
-	// text-align: center;
-	width: 500px;
+	width: 100%;
 }
+
+.divStyle{
+	display: flex;
+	justify-content: space-between;
+	// flex-wrap: wrap-reverse;
+  // width: 100%;
+	// margin: 0 auto;
+}
+
+.header{
+	position: sticky;
+	padding: 10px 10px 10px 30px;
+	width: 45%;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.submitButton{
+		position: absolute;
+    right: 0;
+    height: 68px;
+    top: 0;
+		width: 100px;
+		border: none;
+		cursor: pointer;
+}
+
+button:focus {
+	outline: none;
+}
+
+.searchBox{
+	width: 100%;
+	font-size: 16px;
+	font-style: italic;
+	color: inherit;
+	border: none;
+	caret-color: black;
+	height: 45px;
+	font-weight: lighter;
+	color: #4d4d4d;
+}
+::placeholder{
+	font-weight: lighter;
+	color: rgb(226, 219, 219);	
+}
+
+.listStyling{
+	width: 95%;
+		font-size: 25px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    position: sticky;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #eeeaea;
+		border-left: none;
+    // box-shadow: 2px 3px 20px 8px rgb(0 0 0 / 3%);
+
+		&:hover {
+			.deleteListButton{
+			
+				display: block;
+			}
+		}
+
+		.deleteListButton{
+			color: red;
+			position: absolute;
+			right: 35px;
+			cursor: pointer;
+			display: none;
+		}
+}
+
+.listCheckBox{
+	width: 4%;
+	background: white;
+	padding-top: 15px;
+	border-top: 1px solid #eeeaea;
+	border-bottom: 1px solid #eeeaea;	
+}
+
+
+
+
+
+
