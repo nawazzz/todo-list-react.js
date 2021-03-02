@@ -30,9 +30,9 @@ class App extends React.Component {
         todos: [...this.state.todos, newListObj]
       })
     }
-    this.setState({
-      inputVal: ""
-    })
+    // this.setState({
+    //   inputVal: ""
+    // })
     
     // console.log(this.todos)
   }
