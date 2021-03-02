@@ -39,3 +39,10 @@ class List extends React.Component{
     }
 }
 export default List;
+
+// - dynamically add three elements for "All", "Completed", "Remaining".
+// - Add event listeners on all three elements
+// - The "All" event listener should display the whole list.
+// - "Completed" element should display the list elements that have this.state.isCompleted as "True".
+// - "Remaining" element should display the list elements that have this.state.isCompleted as "False"
+// - Filter method can be used to display completed and remaining list elements
