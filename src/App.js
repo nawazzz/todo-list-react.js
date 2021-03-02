@@ -27,7 +27,9 @@ class App extends React.Component {
     }
     if (e.type === "click" || e.which === 13) {
       this.setState({
-        todos: [...this.state.todos, newListObj]
+        todos: [...this.state.todos, newListObj],
+        inputVal: ""
+
       })
     }
     // this.setState({
